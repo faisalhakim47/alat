@@ -1,8 +1,8 @@
-import Promise from 'fh47-promise'
-import { deepMerge } from 'fh47-obj'
+var Promise = require('alat-promise')
+var merge = require('lodash.merge')
 
 function request(method, url, opts, cb) {
-  opts = deepMerge({
+  opts = merge({
     headers: {
       'Content-Type': 'application/json'
     },
@@ -44,7 +44,7 @@ function request(method, url, opts, cb) {
   })
 }
 
-export function GET(url, opts, modifierFn) {
+function GET(url, opts, modifierFn) {
   return request('GET', url, opts, function (req) {
     if (typeof modifierFn === 'function') {
       modifierFn(req)
@@ -52,7 +52,7 @@ export function GET(url, opts, modifierFn) {
   })
 }
 
-export function POST(url, opts, data, modifierFn) {
+function POST(url, opts, data, modifierFn) {
   opts.data = data || opts.data
   return request('POST', url, opts, function (req) {
     if (typeof modifierFn === 'function') {
@@ -61,7 +61,7 @@ export function POST(url, opts, data, modifierFn) {
   })
 }
 
-export function PUT(url, opts, data, modifierFn) {
+function PUT(url, opts, data, modifierFn) {
   opts.data = data || opts.data
   return request('PUT', url, opts, function (req) {
     if (typeof modifierFn === 'function') {
@@ -70,7 +70,7 @@ export function PUT(url, opts, data, modifierFn) {
   })
 }
 
-export function DELETE(url, opts, modifierFn) {
+function DELETE(url, opts, modifierFn) {
   return request('DELETE', url, opts, function (req) {
     if (typeof modifierFn === 'function') {
       modifierFn(req)
@@ -78,11 +78,19 @@ export function DELETE(url, opts, modifierFn) {
   })
 }
 
-export function HEADER(url, opts, data, modifierFn) {
+function HEADER(url, opts, data, modifierFn) {
   opts.headerOnly = true
   return request('HEADER', url, opts, function (req) {
     if (typeof modifierFn === 'function') {
       modifierFn(req)
     }
   })
+}
+
+module.exports = {
+  GET,
+  POST,
+  PUT,
+  DELETE,
+  HEADER
 }

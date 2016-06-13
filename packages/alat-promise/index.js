@@ -1,6 +1,5 @@
-import Promise from 'lie'
+var LiePromise = require('lie')
 
-window.Promise = window.Promise || Promise
-Promise = window.Promise
+window.Promise = window.Promise || LiePromise
 
-export default Promise
+module.exports = window.Promise

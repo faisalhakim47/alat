@@ -9,7 +9,6 @@
   "author": "Faisal Hakim <faisalhakim47@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "alat-obj": "",
     "alat-promise": "",
     "lodash.merge": "^4.4.0"
   }
