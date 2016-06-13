@@ -1,0 +1,16 @@
+{
+  "name": "alat-xhr",
+  "version": "1.0.0",
+  "description": "XHR tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Faisal Hakim <faisalhakim47@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "alat-obj": "",
+    "alat-promise": "",
+    "lodash.merge": "^4.4.0"
+  }
+}

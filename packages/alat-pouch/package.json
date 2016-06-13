@@ -1,0 +1,17 @@
+{
+  "name": "alat-pouch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Faisal Hakim <faisalhakim47@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "lodash.get": "^4.3.0",
+    "lodash.merge": "^4.4.0",
+    "pouchdb-browser": "^5.4.2",
+    "worker-loader": "^0.7.0"
+  }
+}
